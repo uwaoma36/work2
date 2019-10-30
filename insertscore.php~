@@ -1,0 +1,34 @@
+<?php
+
+$host="localhost";
+$account="root";
+$password="";
+$connect= mysqli_connect($host,$account,$password)or die("server error"); 
+$db =mysqli_select_db($connect,"science_quiz") or die("database error"); 
+$subject=$_POST['subject'];
+$username=$_POST['username'];
+$password=$_POST['password'];
+$score =$_POST['score'];
+$time=$_POST['time'];
+$date= date("Y/m/d");
+$username=trim($username);
+$password=trim($password);
+
+if (!preg_match("^[A-Za-z0-9]+$^", $username)&& !preg_match("^[A-Za-z0-9]+$^", $password) )
+{
+echo"invalid username or password";
+}
+else{
+$result =mysqli_query( $connect ,"UPDATE scores SET  time ='$time',score= '$score', date = '$date'  WHERE userid='$username' AND subject='$subject'");
+if($result){
+session_destroy();
+y//header("location:index.html");
+ echo"score update was successful";
+ } 
+ else{
+ echo"'password  or username error, check and try again";
+}
+
+}
+
+ ?>

@@ -1,0 +1,101 @@
+<?php
+session_start();
+if($_SESSION['username']){
+header("location:onlinehome.php");
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet "  href="css/jquery.mobile-1.4.5.min.css "/>
+<script src="js/jquery.min.js "></script >
+<link rel="stylesheet" href="css/index.css"/>
+<script  src="js/jquery.mobile-1.4.5.min.js "></script>
+<script src="js/forms.js"> </script>
+<link rel="stylesheet" href="css/onlinehome.css"/>
+</head>
+<body>
+
+<!-- Start of first page -->
+    <div data-role="page" id="loginpage">
+	    <div data-position="" data-role="header">
+		 <div  data-role="navbar">
+       <ul id="d">
+      <li ><a data-role="button " data-icon="user"  href="#loginpage" data-theme="">Login</a></li>
+       <li ><a data-role="button " data-overlay-theme="b"
+       data-icon="heart" 
+         href="#registerpage" data-theme=""> Register</a></li>
+       <li ><a data-role="button " data-icon="gear"   href="scoreboard.php" data-theme=""> ScoreBoard</a></li>
+       </ul>
+       </div>
+	 </div><!-- /header -->
+
+	<div data-role="content" >
+		  <div  id="" data-theme="a" class="ui-corner-all"><p id="lmsg"></p>
+            <form>
+           <div style="padding:10px 20px;">
+           <h3>Please sign in</h3>
+           <label for="" class="ui-accessible">Username:</label>
+           <span id="u"></span>
+           <input type="text" value="" id="un"  placeholder="username" data-theme="a" />
+           <label for="" class="ui-accessible">Password:</label>
+            <span id="p"></span>
+            <input type="password"  id="pw" value="" placeholder="password" data-theme="a"/>
+            <input type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b" data-theme="b" id="sub" value="Login"/>             
+            </div>  
+            </form>   
+             </div>
+             </div>
+             <!-- footer -->
+</div><!-- page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="registerpage">	
+		 <div data-role="header">
+		 <div data-role="navbar">
+        <ul id="c"> 
+        <li ><a data-role="button " data-icon="user" href="#loginpage" data-theme="">Login</a></li>
+        <li ><a data-role="button " data-icon="heart" href="#registerpage" data-theme="" > Register</a></li>
+        <li ><a data-role="button " data-icon="gear"href="scoreboard.php" data-theme="" data-prefetch> ScoreBoard</a></li>
+        </ul>
+        </div>
+	     </div><!-- /header -->
+
+	<div data-role="content" >
+	<p id="msg" type=""></p>
+	<!--registration form-->
+	 <div  id="" data-theme="a" class="ui-corner-all">    
+      <form>     
+      <div style="padding:10px 20px;">
+            <h3>Register To Play</h3>                        
+		    <label  class="ui-accessible">Firstname:</label>
+            <span id="f"></span>
+            <input type="text"  id="fn" value="" placeholder="firstname" data-theme="a" />
+			
+            <label  class="ui-accessible">Lastname:</label>
+            <span id="l"></span>
+            <input type="text"  id="ln" value="" placeholder="lastname" data-theme="a" />
+			
+           <label  class="ui-accessible">Username:</label>
+           <span id="ru"></span>
+           <input type="text"  id="ruser" value="" placeholder="Username" data-theme="a"/>
+
+            <label  class="ui-accessible">Password:</label>
+            <span id="rp"></span>
+            <input type="password" id="rpw"  placeholder="password" data-theme="a" value=""/>
+			
+            <input type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b " id="reg" value="Register" data-theme="b"/>
+            </div>
+            </form>
+            	</div>
+	</div><!--content -->
+
+</div> <!--page -->
+<script src="js/mouse.js"></script>
+</body>
+</html>

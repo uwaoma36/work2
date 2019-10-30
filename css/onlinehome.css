@@ -1,0 +1,21 @@
+#footer{
+background:#038AF5;
+
+}
+#c li a, #d li a,#chemistry ul li a, #maths ul li a, #chemistry ul li a, #physics ul li a, #biology ul li a, #geography ul li a {
+background: #038AF5;
+} 
+#header{
+background:#038AF5;
+height:40px;
+		
+}
+
+#footer{
+background:#038AF5;
+height:30px;
+bottom:0px;	
+position:fixed;
+left:0px;
+right:0px;
+}

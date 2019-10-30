@@ -1,0 +1,18 @@
+<?php
+session_start();
+$subject =$_GET['subject'];
+$host="localhost";
+$account="root";
+$password="";
+$record =array();
+$connect =mysqli_connect($host,$account, $password);
+$db= mysqli_select_db($connect,"science_quiz"); 
+$result=mysqli_query($connect, "SELECT register.firstname, register.lastname, $subject.time, $subject.score, $subject.date FROM register,$subject WHERE register.username=$subject.username AND $subject.score>0 ORDER BY score,time DESC" );
+while($row=mysqli_fetch_array($result)){
+array_push($record,array("firstname"=>$row['firstname'], "lastname"=>$row['lastname'] ,
+"time"=>$row['time'],
+"score"=>$row['score'],
+"date"=>$row['date'] ));
+} 
+echo json_encode(array("details"=>$record)); 
+ ?>

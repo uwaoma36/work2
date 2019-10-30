@@ -1,0 +1,10 @@
+<?php
+session_start();
+$subject =$_GET['subject'];
+$host="localhost";
+$account="root";
+$password="";
+$record =array();
+$connect =mysqli_connect($host,$account, $password);
+$db= mysqli_select_db($connect,"science_quiz");
+?>

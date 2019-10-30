@@ -1,0 +1,166 @@
+<?php
+session_start();
+if($_SESSION['username']==""){
+header("location:index.html");
+} 
+?>
+<! <DOCTYPE! html5>
+<html  >
+<head><title> </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="css/scoreboard.css"/>
+<link rel="stylesheet "  href="css/jquery.mobile-1.4.5.min.css "/>
+ <script src=" js/jquery.min.js "></script >
+<script  src="js/jquery.mobile-1.4.5.min.js "></script >
+<script src="js/angular.js" >
+</script>
+<link rel="stylesheet" href="css/onlinehome.css">
+
+</head>
+<body ng-app="scoreboard" >
+<!-- homepage-->
+ 
+ <div id="chemistry"data-role="page">
+<!--page header-->
+  <div data-role="header" data-theme="e">
+  <div data-role="navbar">
+       <ul>
+      <li ><a data-role="button " data-icon="user" data-transition="flip" data-direc tion= "reverse" data-rel="dialog" href="#maths" data-theme="">Maths</a></li>
+       <li ><a data-role="button " data-icon="heart" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#chemistry" data-theme="">Chemistry</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#biology" data-theme="">Biology</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#physics" data-theme="">Physics</a></li>
+   <li> <a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#geography" data-theme="">Geo</a></li>
+       </ul>
+   </div>
+  </div> 
+  <div id="b"data-role="content">
+ <ul ng-controller="chemistryCtrl" id="list" data-role="listview" data-inset="true" >
+ <input type="search" ng-model="search" placeholder="names,score,date,time"/>
+<center> <span data-role="header"><b>CHEMISTRY</b></span></center>
+<li id="ada" ng-repeat="x in record|filter:search" data-inset="true"> 
+<div data-role="header"class="name ">
+<b><h4><center>{{x.firstname}} &nbsp;{{x.lastname}}</center> </h4></b>
+</div>
+<div class="score"><center ><em><b>score</b></em><br><span id="s"> {{x.score}}</span></center> </div>&nbsp<span class="time "><h1>SpentTime&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>{{x.time+"mins"}}<span><h1></span><div data-role="footer"
+ class="date" > <em>Date: &nbsp; &nbsp; &nbsp; {{x.date}}</em></div>
+</li></ul>
+ </div> 
+ </div>
+ 
+ 
+ <div id="biology"data-role="page">
+<!--page header-->
+  <div data-role="header" data-theme="e">
+  <div data-role="navbar">
+       <ul>
+      <li ><a data-role="button " data-icon="user" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#maths" data-theme="">Maths</a></li>
+       <li ><a data-role="button " data-icon="heart" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#chemistry" data-theme="">Chemistry</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#biology" data-theme="">Biology</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#physics" data-theme="">Physics</a></li>
+   <li> <a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#geography" data-theme="">Geo</a></li>
+       </ul>
+   </div>
+  </div> 
+  <div id="b"data-role="content">
+
+ <ul ng-controller="biologyCtrl" id="list" data-role="listview" data-inset="true" >
+<center> <span data-role="header"><b>BIOLOGY</b></span></center>
+<li id="ada" ng-repeat="x in record "> 
+<div data-role="header"class="name ">
+<b><h4>{{x.firstname}} &nbsp;{{x.lastname}} </h4></b>
+</div>
+<div class="score"><center ><em><b>score</b></em><br><span id="s"> {{x.score}}</span></center> </div>&nbsp<span class="time "><h1>SpentTime&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>{{x.time+"mins"}}<span><h1></span><div data-role="footer"
+ class="date" > <em>Date: &nbsp; &nbsp; &nbsp; {{x.date}}</em></div>
+</li></ul>
+ </div> 
+ </div>
+ 
+ 
+ 
+ <div id="geography"data-role="page">
+<!--page header-->
+  <div data-role="header" data-theme="e">
+  <div data-role="navbar">
+       <ul>
+      <li ><a data-role="button " data-icon="user" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#maths" data-theme="">Maths</a></li>
+       <li ><a data-role="button " data-icon="heart" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#chemistry" data-theme="">Chemistry</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#biology" data-theme="">Biology</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" data-transition="flip" data-direc tion= "reverse" href="#physics" data-theme="">Physics</a></li>
+   <li> <a data-role="button " data-icon="gear" data-transition="slideDown"  data-transition="flip" data-direc tion= "reverse" href="#geography" data-theme="">Geo</a></li>
+       </ul>
+   </div>
+  </div> 
+  <div id="b"data-role="content">
+
+ <ul ng-controller="geographyCtrl" id="list" data-role="listview" data-inset="true" >
+<center> <span data-role="header"><b>GEOGRAPHY</b></span></center>
+<li id="ada" ng-repeat="x in record "> 
+<div data-role="header"class="name ">
+<b><h4>{{x.firstname}} &nbsp;{{x.lastname}} </h4></b>
+</div>
+<div class="score"><center ><em><b>score</b></em><br><span id="s"> {{x.score}}</span></center> </div>&nbsp<span class="time "><h1>SpentTime&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>{{x.time+"mins"}}<span><h1></span><div data-role="footer"
+ class="date" > <em>Date: &nbsp; &nbsp; &nbsp; {{x.date}}</em></div>
+</li></ul>
+ </div> 
+ </div>
+ 
+ 
+ <div id="maths"data-role="page">
+<!--page header-->
+  <div data-role="header" data-theme="e">
+  <div data-role="navbar">
+       <ul>
+      <li ><a data-role="button " data-icon="user"   data-transition="flip" data-direction= "reverse" href="#maths" data-theme="">Maths</a></li>
+       <li ><a data-role="button " data-icon="heart"   data-transition="flip" data-direc tion= "reverse" href="#chemistry" data-theme="">Chemistry</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideUp" data-direction= "reverse" href="#biology" data-theme="">Biology</a></li>
+       <li ><a data-role="button " data-icon="gear"   data-transition="flip" data-direc tion= "reverse" href="#physics" data-theme="">Physics</a></li>
+   <li> <a data-role="button " data-icon="gear"    data-transition="flip" data-direction= "reverse" href="#geography" data-theme="">Geo</a></li>
+       </ul>
+   </div>
+  </div> 
+  <div id="b"data-role="content">
+
+ <ul ng-controller="mathsCtrl" id="list" data-role="listview" data-inset="true" >
+<center> <span data-role="header"><b>MATHS</b></span></center>
+<li id="ada" ng-repeat="x in record "> 
+<div data-role="header"class="name ">
+<b><h4>{{x.firstname}} &nbsp;{{x.lastname}} </h4></b>
+</div>
+<div class="score"><center ><em><b>score</b></em><br><span id="s"> {{x.score}}</span></center> </div>&nbsp<span class="time "><h1>SpentTime&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>{{x.time+"mins"}}<span><h1></span><div data-role="footer"
+ class="date" > <em>Date: &nbsp; &nbsp; &nbsp; {{x.date}}</em></div>
+</li></ul>
+ </div> 
+ </div>
+ 
+ 
+ 
+ <div id="physics"data-role="page">
+<!--page header-->
+  <div data-role="header" data-theme="e">
+  <div data-role="navbar">
+       <ul>
+      <li ><a data-role="button " data-icon="user" data-transition="pop" href="#maths" data-theme="">Maths</a></li>
+       <li ><a data-role="button " data-icon="heart" data-transition="flip" href="#chemistry" data-theme="">Chemistry</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="slideDown" href="#biology" data-theme="">Biology</a></li>
+       <li ><a data-role="button " data-icon="gear" data-transition="fade" href="#physics" data-theme="">Physics</a></li>
+   <li> <a data-role="button " data-icon="gear" data-transition="flip" href="#geography" data-theme="">Geo</a></li>
+       </ul>
+   </div>
+  </div> 
+  <div id="b"data-role="content">
+
+ <ul ng-controller="physicsCtrl" id="list" data-role="listview" data-inset="true" >
+<center> <span data-role="header"><b>PHYSICS</b></span></center>
+<li id="ada" ng-repeat="x in record "> 
+<div data-role="header"class="name ">
+<b><h4>{{x.firstname}} &nbsp;{{x.lastname}} </h4></b>
+</div>
+<div class="score"><center ><em><b>score</b></em><br><span id="s"> {{x.score}}</span></center> </div>&nbsp<span class="time "><h1>SpentTime&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>{{x.time+"mins"}}<span><h1></span><div data-role="footer"
+ class="date" > <em>Date: &nbsp; &nbsp; &nbsp; {{x.date}}</em></div>
+</li></ul>
+ </div> 
+ </div>
+<script src="js/scoreboard.js">
+ </script>
+ </body>
+ </html> 

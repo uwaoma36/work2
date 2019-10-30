@@ -1,0 +1,37 @@
+<?php
+session_start();
+if(!$_SESSION['username']){
+header("location:index.php");
+} 
+?>
+ <! <DOCTYPE! html5>
+<html >
+<head><title> </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet "  href="css/jquery.mobile-1.4.5.min.css "/>
+ <script src=" js/jquery.min.js "></script >
+<script  src="js/jquery.mobile-1.4.5.min.js "></script >
+<link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+<!-- homepage -->
+<div id="home"data-role="page">
+
+<!--page header-->
+  <div data-role="header" id="header" data-theme="e">
+  <a data-rel="back" data-icon="arrow-l" data-iconpos="notext"></a><span><center><img src="img/header.gif"></img><center></span>
+  </div>
+  <div id="b"data-role="content">
+<img  id="chem" src="img/chem.gif" />
+<img  id="phys" src="img/physics.gif" />
+<img  id="math" src="img/maths.gif" />
+ </div>
+ <div id="footer" data-role="footer">
+ <span><center><img src="img/footer.gif"></img><center></span>
+ <div> 
+  </div>
+ </body> 
+ <script src="js/onlineScript.js"></script>
+ <script src="js/home.js" >
+ </script >
+ </html> 

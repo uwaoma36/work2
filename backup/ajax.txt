@@ -1,0 +1,16 @@
+function ajax(e){
+ if(!register){ 
+ if($.trim('#fn').length>0 & $.trim('#ln').length>0 & $.trim('#ruser).length>0& $.trim('#rpw').length>0 ){
+ e.preventDefault();
+var datastring=$("#regform"). serialize;
+$.post(
+'register.php', 
+dataString,
+function(data){
+$("#msg").html(data);
+} 
+);
+
+}
+} 
+} 

@@ -1,0 +1,132 @@
+//ig script for form validation 
+$(document).ready(function(){ var result="f";
+ var log="f";
+ function register(e){ 
+ e.preventDefault();
+ var reuser=$.trim($('#ruser').val());
+ var repass=$.trim($('#rpw').val());
+ var first=$.trim($('#fn').val()) ;
+ var last=$.trim($('#ln').val());
+ if(reuser.length<5||reuser==""||reuser==null){
+ $('#ru').css("color", "red").text ("username required "); 
+ result="t";
+ } 
+ if
+ ( repass.length<7||repass==""||repass==null){
+ $('#rp').css("color", "red").text ("password required "); 
+ result="t" ;
+ } 
+
+if
+(reuser.length==5||reuser.length>30){
+ $('#ru').css("color", "red").text ("invalid username (4-30)"); result="t" ; }
+
+ if
+(repass.length==7||repass.length>30){
+ $('#rp').css("color", "red").text ("invalid password(8-30)"); result="t"; }
+
+if
+(first.length<2||first==""||first==null){
+ $('#f').css("color", "red").text ("  firstname required "); 
+ result="t";
+ }
+ if (last.length<2||last==""||last==null){
+ $('#l').css("color","red").text ("lastname required "); 
+ result="t";
+ } 
+if
+(first.length==2||first.length>36){ 
+ $('#f').css("color", "red").text ("invalid firstname (6-36)"); result="t"; }
+ if
+(last.length==2||last.length>36){
+ $('#l').css("color", "red").text ("invalid lastname  (6-36)"); result="t" ; }
+ submit();
+} 
+//calling submit and login
+$('#reg').click(register);
+$('#sub').click(loginv);
+
+
+//login form validation code
+ function loginv(e){ 
+ e.preventDefault();
+ var suser=$.trim($('#un').val());
+ var spass=$.trim($('#pw').val());
+ 
+ if (suser.length<5||suser==""||suser==null){
+ $('#u').css("color", "red").text ("username required"); 
+ log="t";
+ } 
+ else if ( spass.length<7||spass==""||suser==null){
+ $('#p').css("color", "red").text ("password required "); log="t";
+ } 
+  
+else if (suser.length==5||suser.length>30){
+ $('#u').css("color", "red").text ("invalid username (4-30)");
+ log="t";
+ }
+else if (spass.length==7||spass.length>30){
+ $('#p').css("color", "red").text ("invalid username (8-30)"); log="t"; }
+ else{log="f"} 
+login();
+} 
+//registration form validation 
+function submit(){ 
+ if(result=="f"){
+ alert("we are onenload ");
+ var firstname=$("#fn").val();
+ var lastname=$("#ln").val();
+ var
+ username=$("#ruser").val();
+ var password=$("#rpw").val();
+var dataString="firstname="+firstname+"&lastname="+lastname+"&username="+username+"&password="+password;
+var url="register.php";
+ if($.trim(firstname).length>0 &  $.trim(lastname).length>0  &$.trim(username).length>0&$.trim(password).length>0){
+ $.post( url,dataString,function(data){ 
+if(data.length>=30){ 
+alert(data);
+ $('input').val("");
+} 
+else{alert(data);} 
+ } 
+ );} 
+}
+}
+//login form ajax server code
+function login(){
+if(log=="f"){
+
+alert("we are onenload ");
+ var
+ username=$("#un").val();
+ var password=$("#pw").val();
+var dataString="username="+username+"&password="+password;
+var url="login.php";
+if($.trim(username).length>0&$.trim(password).length>0){
+ $.post( url,dataString,
+ function(data){ 
+ if(data=="ok"){
+ document.location= "onlinehome.php";
+}alert(data);
+ } 
+ );
+}
+} 
+} 
+//submit score ajax sever
+function score(){
+var subject =$('#subject').val();
+var username =$('#username').val();
+var password =$.trim($('#password').val());
+var score=$('#score').val();
+var time=$('#time').val();
+var dataString="subject="+subject+"&username="+username+"&password="+password+"&score="+score+"&time="+time;
+var url="insertscore.php";
+$.post(url, dataString, 
+function(data){
+alert(data);
+} 
+);
+} 
+$('#insert').click(score);
+}) ;

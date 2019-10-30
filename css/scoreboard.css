@@ -1,0 +1,41 @@
+#b{
+ :solid #3B67A6 2px;
+margin-left:0px;
+margin-right:0px;
+}
+.score{
+height:70px ;
+width:70px ;
+border:inset green 1px;
+border-radius:360px;
+background:red;
+float:left;
+} 
+.name{
+border-radius:8px;
+} 
+.date{
+border-radius:6px;
+} 
+#ada:nth-child(even){
+background:green;
+} 
+#ada:nth-child(odd){
+background: #038AF5 ;
+}
+.time{
+float:right;
+} 
+.time span{
+border-radius:360px;
+font-size:px;
+background:red;
+} 
+.footer{
+} 
+.score #s{
+font:30px bold;
+border-radius:360px;
+background:  #038AF5 ;
+border:grey ;
+} 

@@ -1,0 +1,59 @@
+#timer{
+Border-radius:360px; 
+position:fixed;
+left:0px;
+top:0px; 
+border:solid #E5F8CD 6px;
+background:#C8DACC;
+color:red;
+font:bold Calibri(body) ;
+} 
+
+#start{
+height:80px;
+width:80px;
+shadow:true;
+border:solid #038AF5 2px;
+Border-radius:360; 
+margin-top:250px;
+}
+#start:hover{
+height:100px;
+width:100px;
+Border-radius:360; 
+}
+body{
+background:url("../img/2.jpg");
+position:relative;
+}
+#header{
+left:0px;
+right:0px;
+background:#038AF5;
+position:fixed;
+height:40px;
+width:;	
+font:  18px bold ;
+top:0px;	
+}
+#footer{
+left:0px;
+right:0px;
+background:#038AF5;
+position:fixed;
+height:30px;
+font: 18px bold ;
+bottom:0px;	
+}
+#submit,#reset{
+	border:solid #038AF5 2px;
+	height:40px;
+	width:60px;
+	border-radius:8px;
+}
+#submit:hover,#reset:hover{
+border:solid red 2px;
+height:50px;
+width:70px;
+Border-radius:360; 
+}
